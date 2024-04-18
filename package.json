@@ -1,5 +1,5 @@
 {
-  "name": "@electron/notarize",
+  "name": "@warrenday/electron-notarize",
   "version": "0.0.0-development",
   "description": "Notarize your Electron app",
   "main": "lib/index.js",
@@ -9,7 +9,7 @@
   "homepage": "https://github.com/electron/notarize#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/electron/notarize.git"
+    "url": "git+https://github.com/warrenday/notarize.git"
   },
   "bugs": {
     "url": "https://github.com/electron/notarize/issues"

@@ -83,7 +83,13 @@ export async function notarizeAndWaitForNotaryTool(opts: NotaryToolStartOptions)
     ];
 
     const result = await spawn('xcrun', notarizeArgs);
-    const parsed = JSON.parse(result.output.trim());
+    let parsed;
+    try {
+        parsed = JSON.parse(result.output.trim());
+    } catch (e) {
+        console.error("Failed to parse JSON:", e);
+        throw new Error(result.output.trim());
+    }
 
     if (result.code !== 0 || !parsed.status || parsed.status !== 'Accepted') {
       try {
